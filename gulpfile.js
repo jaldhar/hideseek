@@ -4,7 +4,7 @@ var gulp          = require('gulp'),
     concat        = require('gulp-concat'),
     minifyCSS     = require('gulp-minify-css'),
     rename        = require('gulp-rename'),
-    uglify        = require('gulp-uglify'),
+    uglify        = require('gulp-uglify-es').default,
     jshint        = require('gulp-jshint'),
     minifyHTML    = require('gulp-minify-html'),
     replaceHTML   = require('gulp-html-replace'),
@@ -29,14 +29,14 @@ var gulp          = require('gulp'),
 
     sourcePaths = {
         css: [
-            'src/css/*.css', 
+            'src/css/*.css',
         ],
         js: [
-            'src/js/game.js', 
+            'src/js/game.js',
             'src/js/*.js'
         ],
         mainHtml: [
-            'src/index.html' 
+            'src/index.html'
         ]
     };
 
@@ -82,7 +82,7 @@ gulp.task('buildIndex', function () {
 });
 
 gulp.task('cleanBuild', function () {
-    return gulp.src('./_build/*', { read: false })    
+    return gulp.src('./_build/*', { read: false })
         .pipe(ignore('.gitignore'))
         .pipe(rimraf());
 });
@@ -92,7 +92,7 @@ gulp.task('zipBuild', function () {
         .pipe(zip('game.zip'))
         .pipe(gulp.dest('./_dist'))
         .pipe(checkFileSize({
-            fileSizeLimit: 16384 
+            fileSizeLimit: 16384
         }));
 });
 
