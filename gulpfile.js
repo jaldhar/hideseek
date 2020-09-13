@@ -24,7 +24,7 @@ var gulp          = require('gulp'),
     distPaths = {
         build: '_build',
         js_build_file: 'game.min.js',
-        css_build_file: 'game.min..css'
+        css_build_file: 'game.min.css'
     },
 
     sourcePaths = {
