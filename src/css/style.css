@@ -6,16 +6,19 @@ body {
     text-align: center;
 }
 
-#atlanta{
+#atl {
     display: grid;
     grid-template-rows: 168px 168px 168px;
     grid-template-columns: 168px 168px 168px;
     justify-content: center;
 }
 
-s {
+figcaption {
     size: 10px;
-    text-decoration: none;
+}
+
+#dialog {
+    text-align: left;
 }
 
 .b {
